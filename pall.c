@@ -1,8 +1,9 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * pall - Prints stack.
  * @head: Pointer to first element (last added).
+ * @line_number: Line number.
  *
  * Return: Number of elements in stack.
  */

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * main - Program that interprets monty files to build stacks.
@@ -19,7 +19,7 @@ int main(int ac, char **argv)
 
 	if (ac != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");	
+		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
 

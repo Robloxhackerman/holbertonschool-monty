@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * get_function - Takes line from monty and returns corresponding op function.
