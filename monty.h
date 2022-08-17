@@ -40,7 +40,8 @@ typedef struct instruction_s
 void push(stack_t **, unsigned int);
 void pall(stack_t **, unsigned int);
 void pint(stack_t **, unsigned int);
-void (*get_function(char *, unsigned int))(stack_t **, unsigned int);
-
+void (*get_function(char *))(stack_t **, unsigned int);
+int check_number(char *);
+void push_err(unsigned int);
 
 #endif
