@@ -41,3 +41,32 @@ void free_stack(stack_t **head)
 		}
 	}
 }
+
+
+/**
+ * open_file - Function that tries to open a file.
+ * @ac: Number of argumetns.
+ * @argv: String arguments.
+ *
+ * Return: Pointer to file. (Exits program on failure)
+ */
+
+FILE *open_file(int ac, char **argv)
+{
+	FILE *file = NULL;
+
+        if (ac != 2)
+        {
+                fprintf(stderr, "USAGE: monty file\n");
+                exit(EXIT_FAILURE);
+        }
+
+        file = fopen(argv[1], "r");
+
+        if (!file)
+        {
+                fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+                exit(EXIT_FAILURE);
+        }
+	return (file);
+}

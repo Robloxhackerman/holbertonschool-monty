@@ -2,6 +2,8 @@
 
 /**
  * main - Program that interprets monty files to build stacks.
+ * @ac: Number of arguments passed to main.
+ * @argv: Pointer to string arguments.
  *
  * Return: 0 on success, EXIT_FAILURE if fails.
  */
@@ -12,25 +14,14 @@ int main(int ac, char **argv)
 	size_t buf_size = 0;
 	FILE *file = NULL;
 	stack_t *stack = NULL;
-	int line_number = 1;
+	int line_number = 0;
 	void (*f)(stack_t **, unsigned int) = NULL;
 
-	if (ac != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
-	}
-
-	file = fopen(argv[1], "r");
-
-	if (!file)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		return (EXIT_FAILURE);
-	}
+	file = open_file(ac, argv);
 
 	while (getline(&buf, &buf_size, file) != -1)
 	{
+		line_number++;
 		tok = strtok(buf, " \t\n\r");
 		if (tok == NULL)
 			continue;
@@ -39,10 +30,10 @@ int main(int ac, char **argv)
 			(*f)(&stack, line_number);
 		else
 		{
+			free_stack(&stack);
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tok);
-			return (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
-		line_number++;
 	}
 
 	fclose(file);

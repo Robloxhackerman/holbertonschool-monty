@@ -44,5 +44,6 @@ void (*get_function(char *))(stack_t **, unsigned int);
 int check_number(char *);
 void push_err(unsigned int);
 void free_stack(stack_t **);
+FILE *open_file(int ac, char **argv);
 
 #endif
