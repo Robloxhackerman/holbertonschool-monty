@@ -3,7 +3,6 @@
 /**
  * get_function - Takes line from monty and returns corresponding op function.
  * @buf: Pointer to buffer.
- * @line: Line number.
  * Return: Pointer to operator function.
  */
 
