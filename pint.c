@@ -10,4 +10,9 @@ void pint(stack_t **head, __attribute__((unused)) unsigned int line_number)
 {
 	if (head && *head)
 		printf("%d\n", (*head)->n);
+	else if
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n");
+		exit(EXIT_FAILURE);
+	}
 }
