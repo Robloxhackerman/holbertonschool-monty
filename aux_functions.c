@@ -75,7 +75,7 @@ FILE *open_file(int ac, char **argv)
  * @line_number: Monty line.
  */
 
-void nop(__attribute__ ((unused)) stack_t **h, __attribute__ ((unused)) n)
+void nop(__attribute__ ((unused)) stack_t **h, __attribute__ ((unused)) unsigned int n)
 {
 	;
 }
