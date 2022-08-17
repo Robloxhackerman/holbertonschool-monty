@@ -3,7 +3,7 @@
 /**
  * pop - Removes top element of stack.
  * @head: Adress of head pointer.
- * @line_number: Monty line.
+ * @line_number: Monty line from which function was called.
  */
 
 void pop(stack_t **head, unsigned int line_number)

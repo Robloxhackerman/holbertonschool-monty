@@ -13,8 +13,8 @@ int main(int ac, char **argv)
 	char *buf = NULL, *tok = NULL;
 	size_t buf_size = 0;
 	FILE *file = NULL;
-	stack_t *stack = NULL;
 	int line_number = 0;
+	stack_t *stack = NULL;
 	void (*f)(stack_t **, unsigned int) = NULL;
 
 	file = open_file(ac, argv);
