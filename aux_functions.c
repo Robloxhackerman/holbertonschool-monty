@@ -19,3 +19,25 @@ int check_number(char *str)
 	}
 	return (0);
 }
+
+
+/**
+ * free_stack - Frees stack.
+ * @head: Adress of head pointer.
+ */
+
+void free_stack(stack_t **head)
+{
+	stack_t *cursor = NULL;
+
+	if (head)
+	{
+		cursor = *head;
+		while (cursor)
+		{
+			cursor = cursor->next;
+			free(*head);
+			*head = cursor;
+		}
+	}
+}
