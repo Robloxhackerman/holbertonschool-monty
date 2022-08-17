@@ -7,15 +7,16 @@
  * Return: Number of elements in stack.
  */
 
-int pall(struct stack_s *head)
+void pall(stack_t **head, __attribute__((unused)) unsigned int line_number)
 {
-	int count = 0;
+	stack_t *cursor = NULL;
 
-	while (head)
+	if (head)
+		cursor = *head;
+
+	while (cursor)
 	{
-		printf("%d\n", head->n, count++);
-		head = head->next;
+		printf("%d\n", cursor->n);
+		cursor = cursor->next;
 	}
-
-	return (count);
 }
