@@ -11,13 +11,14 @@ void (*get_function(char *buf))(stack_t **, unsigned int)
 	instruction_t arr[] = {
 		{"push", push},
 		{"pall", pall},
-		{"pint", pint}
+		{"pint", pint},
+		{"pop", pop}
 	};
 	int i;
 
 	if (buf)
 	{
-		for (i = 0; i < 3; i++)
+		for (i = 0; i < 4; i++)
 		{
 			if (strcmp(buf, arr[i].opcode) == 0)
 				return (arr[i].f);
