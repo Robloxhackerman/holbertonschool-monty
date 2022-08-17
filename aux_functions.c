@@ -68,3 +68,14 @@ FILE *open_file(int ac, char **argv)
 	}
 	return (file);
 }
+
+/**
+ * nop - Does nothing.
+ * @head: Adress of head pointer.
+ * @line_number: Monty line.
+ */
+
+void nop(__attribute__ ((unused)) stack_t **h, __attribute__ ((unused)) n)
+{
+	;
+}
