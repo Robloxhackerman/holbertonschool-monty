@@ -6,7 +6,7 @@
  * @stack: Stack to free.
  */
 
-void push_err(unsigned int line_number, stack_t **stack)
+void push_err(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	status = 1;
