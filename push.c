@@ -5,12 +5,11 @@
  * @line_number: Line of error.
  */
 
-void push_err(unsigned int line_number)
+void push_err(unsigned int line_number, stack_t **stack)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
-	exit(EXIT_FAILURE);
+	free_stack(stack);
 }
-
 
 /**
  * push - Pushes an int into a stack.
@@ -30,21 +29,30 @@ void push(stack_t **head, unsigned int line_number)
 	{
 		tok = strtok(NULL, " \n\r\t");
 		if (!tok)
-			push_err(line_number);
-
+		{
+			status = 1;
+			push_err(line_number, head);
+			return;
+		}
 		if (check_number(tok) == 0)
 			number = atoi(tok);
 		else
-			push_err(line_number);
-
+		{
+			status = 1;
+			push_err(line_number, head);
+			return;
+		}
 		new = malloc(sizeof(stack_t));
 		if (!new)
+		{
 			fprintf(stderr, "Error: malloc failed on line: %d\n", line_number);
-
+			free_stack(head);
+			status = 1;
+			return;
+		}
 		new->n = number;
 		new->prev = NULL;
 		new->next = NULL;
-
 		if (*head == NULL)
 			*head = new;
 		else

@@ -1,5 +1,7 @@
 #include "monty.h"
 
+int status = 0;
+
 /**
  * main - Program that interprets monty files to build stacks.
  * @ac: Number of arguments passed to main.
@@ -27,7 +29,11 @@ int main(int ac, char **argv)
 			continue;
 		f = get_function(tok);
 		if (f)
+		{
 			(*f)(&stack, line_number);
+			if (status == 1)
+				break;
+		}
 		else
 		{
 			free_stack(&stack);
