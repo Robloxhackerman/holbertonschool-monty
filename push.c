@@ -31,14 +31,14 @@ void push(stack_t **head, unsigned int line_number)
 		tok = strtok(NULL, " \n\r\t");
 		if (!tok)
 		{
-			push_err(line_number, head);
+			push_err(line_number);
 			return;
 		}
 		if (check_number(tok) == 0)
 			number = atoi(tok);
 		else
 		{
-			push_err(line_number, head);
+			push_err(line_number);
 			return;
 		}
 		new = malloc(sizeof(stack_t));
