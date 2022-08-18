@@ -72,10 +72,10 @@ FILE *open_file(int ac, char **argv)
 /**
  * nop - Does nothing.
  * @head: Adress of head pointer.
- * @line_number: Monty line.
+ * @l: Monty line.
  */
 
-void nop (UNUSED stack_t **head, UNUSED unsigned int l)
+void nop(UNUSED stack_t **head, UNUSED unsigned int l)
 {
 	;
 }
