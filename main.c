@@ -35,9 +35,9 @@ int main(int ac, char **argv)
 		}
 		else
 		{
-			free_stack(&stack);
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tok);
-			exit(EXIT_FAILURE);
+			status = 1;
+			break;
 		}
 	}
 	fclose(file);
