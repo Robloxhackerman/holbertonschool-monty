@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#define UNUSED __attribute__ ((unused))
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
