@@ -3,12 +3,13 @@
 /**
  * push_err - Prints error for push operation.
  * @line_number: Line of error.
+ * @stack: Stack to free.
  */
 
 void push_err(unsigned int line_number, stack_t **stack)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
-	free_stack(stack);
+	status = 1;
 }
 
 /**
@@ -30,7 +31,6 @@ void push(stack_t **head, unsigned int line_number)
 		tok = strtok(NULL, " \n\r\t");
 		if (!tok)
 		{
-			status = 1;
 			push_err(line_number, head);
 			return;
 		}
@@ -38,7 +38,6 @@ void push(stack_t **head, unsigned int line_number)
 			number = atoi(tok);
 		else
 		{
-			status = 1;
 			push_err(line_number, head);
 			return;
 		}
@@ -46,7 +45,6 @@ void push(stack_t **head, unsigned int line_number)
 		if (!new)
 		{
 			fprintf(stderr, "Error: malloc failed on line: %d\n", line_number);
-			free_stack(head);
 			status = 1;
 			return;
 		}

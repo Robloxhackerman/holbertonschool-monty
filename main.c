@@ -20,7 +20,6 @@ int main(int ac, char **argv)
 	void (*f)(stack_t **, unsigned int) = NULL;
 
 	file = open_file(ac, argv);
-
 	while (getline(&buf, &buf_size, file) != -1)
 	{
 		line_number++;
@@ -41,9 +40,8 @@ int main(int ac, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
-
 	fclose(file);
 	free(buf);
 	free_stack(&stack);
-	return (0);
+	return (status);
 }
