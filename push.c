@@ -3,7 +3,6 @@
 /**
  * push_err - Prints error for push operation.
  * @line_number: Line of error.
- * @stack: Stack to free.
  */
 
 void push_err(unsigned int line_number)
