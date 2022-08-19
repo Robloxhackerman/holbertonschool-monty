@@ -76,3 +76,32 @@ void mul(stack_t **head, unsigned int line_number)
 		}
 	}
 }
+
+/**
+ * mod - Mod of second top element of stack by top element.
+ * @head: Adress of head pointer of stack.
+ * @line_number: Line of monty file.
+ */
+
+void mod(stack_t **head, unsigned int line_number)
+{
+	if (head)
+	{
+		if (*head && (*head)->next)
+		{
+			if ((*head)->n == 0)
+			{
+				fprintf(stderr, "L%d: division by zero", line_number);
+				status = 1;
+				return;
+			}
+			((*head)->next)->n %= (*head)->n;
+			pop(head, line_number);
+		}
+		else
+		{
+			fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+			status = 1;
+		}
+	}
+}

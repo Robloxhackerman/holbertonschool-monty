@@ -18,13 +18,15 @@ void (*get_function(char *buf))(stack_t **, unsigned int)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", division},
-		{"mul", mul}
+		{"mul", mul},
+		{"mod", mod},
+		{NULL, NULL}
 	};
 	int i;
 
 	if (buf)
 	{
-		for (i = 0; i < 10; i++)
+		for (i = 0; arr[i].opcode; i++)
 		{
 			if (strcmp(buf, arr[i].opcode) == 0)
 				return (arr[i].f);
