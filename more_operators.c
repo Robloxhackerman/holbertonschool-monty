@@ -34,7 +34,7 @@ void division(stack_t **head, unsigned int line_number)
 {
 	if (head)
 	{
-		if (*head && (*head)->n)
+		if (*head && (*head)->next)
 		{
 			if ((*head)->n == 0)
 			{
