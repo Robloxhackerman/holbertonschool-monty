@@ -128,7 +128,7 @@ void pchar(stack_t **head, unsigned int line_number)
 		}
 		else
 		{
-			fprintf(stderr, "L%d: can't pchar, stack too short\n", line_number);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 			status = 1;
 		}
 	}
