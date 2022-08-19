@@ -26,6 +26,8 @@ int main(int ac, char **argv)
 		tok = strtok(buf, " \t\n\r");
 		if (tok == NULL)
 			continue;
+		else if (*tok == '#')
+			continue;
 		f = get_function(tok);
 		if (f)
 		{
