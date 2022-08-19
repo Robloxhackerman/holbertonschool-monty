@@ -91,7 +91,7 @@ void mod(stack_t **head, unsigned int line_number)
 		{
 			if ((*head)->n == 0)
 			{
-				fprintf(stderr, "L%d: division by zero", line_number);
+				fprintf(stderr, "L%d: division by zero\n", line_number);
 				status = 1;
 				return;
 			}
