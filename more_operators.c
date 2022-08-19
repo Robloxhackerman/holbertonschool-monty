@@ -105,3 +105,31 @@ void mod(stack_t **head, unsigned int line_number)
 		}
 	}
 }
+
+/**
+ * pchar - Prints char at top of the stack.
+ * @head: Adress of head pointer to stack.
+ * @line_number: Line of monty file.
+ */
+
+void pchar(stack_t **head, unsigned int line_number)
+{
+	if (head)
+	{
+		if (*head && (*head)->n)
+		{
+			if ((*head)->n < 0 || (*head)->n > 127)
+			{
+				fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+				status = 1;
+				return;
+			}
+			printf("%c\n", (*head)->n);
+		}
+		else
+		{
+			fprintf(stderr, "L%d: can't pchar, stack too short\n", line_number);
+			status = 1;
+		}
+	}
+}
