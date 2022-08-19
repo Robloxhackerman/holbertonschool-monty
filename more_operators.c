@@ -32,16 +32,22 @@ void sub(stack_t **head, unsigned int line_number)
 
 void division(stack_t **head, unsigned int line_number)
 {
+	stack_t *next = NULL;
 	if (head)
 	{
-		if (*head && (*head)->next)
+		if (*head && (*head)->n)
 		{
+			if ((*head)->n == 0)
+			{
+				fprintf(stderr, "L%d: division by zero\n", line_number);
+				status = 1;
+				return;
+			}
 			((*head)->next)->n /= (*head)->n;
 			pop(head, line_number);
 		}
 		else
 		{
-			free_stack(head);
 			fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 			status = 1;
 		}
