@@ -42,7 +42,7 @@ void division(stack_t **head, unsigned int line_number)
 		else
 		{
 			free_stack(head);
-			fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+			fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 			status = 1;
 		}
 	}
