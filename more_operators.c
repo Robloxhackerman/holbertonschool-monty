@@ -25,12 +25,12 @@ void sub(stack_t **head, unsigned int line_number)
 }
 
 /**
- * div - Divides second top elements of stack by the top element.
+ * division - Divides second top elements of stack by the top element.
  * @head: Adress of head pointer of stack.
  * @line_number: Line of monty file.
  */
 
-void div(stack_t **head, unsigned int line_number)
+void division(stack_t **head, unsigned int line_number)
 {
 	if (head)
 	{

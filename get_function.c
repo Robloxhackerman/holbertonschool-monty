@@ -17,7 +17,7 @@ void (*get_function(char *buf))(stack_t **, unsigned int)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div}
+		{"div", division}
 	};
 	int i;
 
