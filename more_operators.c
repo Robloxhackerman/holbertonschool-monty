@@ -32,7 +32,6 @@ void sub(stack_t **head, unsigned int line_number)
 
 void division(stack_t **head, unsigned int line_number)
 {
-	stack_t *next = NULL;
 	if (head)
 	{
 		if (*head && (*head)->n)
